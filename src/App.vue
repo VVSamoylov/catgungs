@@ -1,8 +1,7 @@
 <template>
 <div class="container">
   <nav>
-  <Menu/>
-    <router-link to="/about">About</router-link>
+    <Menu/>
   </nav>
   <router-view/>
   </div>

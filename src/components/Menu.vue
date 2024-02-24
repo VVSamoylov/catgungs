@@ -15,7 +15,7 @@
           <router-link class="nav-link" to="/addjob">Принять на работу</router-link> 
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Список сотрудников</a>
+          <router-link class="nav-link" to="/liststaff">Список сотрудников</router-link> 
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
