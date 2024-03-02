@@ -34,7 +34,7 @@ export default {
   },
   methods:{
     addJob(){
-        this.$store.commit('addWorker', this.staff)
+        this.$store.commit('addWorker', {...this.staff})
     }
   }
 }
