@@ -9,7 +9,7 @@
           Возраст {{age}} <br/>
           Дата приема на работу {{startDate}}
         </p>
-        <router-link class="nav-link" to="{ name: 'edit', params:{nic: nickname }}">Редактировать</router-link> 
+        <router-link class="btn btn-primary" :to="{name: 'edit', params:{id: idCat}}">Редактировать</router-link> 
         <button v-on:click="deleteCat" type="button" class="btn btn-danger">Удалить</button>
   </div>
 </div>
@@ -25,16 +25,17 @@ export default {
   name: 'JobCard',
   emits:['delete', 'edit'],
   props: {
+    idCat: '',
     nickname: '',
     age : '',
     startDate : ''
   },
   methods:{
     deleteCat(){
-      this.$emit('delete', this.$props.nickname)
+      this.$emit('delete', this.$props.idCat)
     },
     editCat(){
-      this.$emit('edit', this.$props.nickname)
+      this.$emit('edit', this.$props.idCat)
     }
   }
 }

@@ -7,6 +7,9 @@ export default createStore({
   getters: {
     getAllJob(state){
       return state.workers
+    },
+    getCatId: state =>(id) =>{
+      return state.workers.find(a=> a.idCat == id);
     }
   },
   mutations: {
@@ -14,7 +17,12 @@ export default createStore({
       this.state.workers.push(par)
     },
     deleteCatName(state, par){
-      state.workers = state.workers.filter(a => a.nickname != par)
+      state.workers = state.workers.filter(a => a.idCat != par)
+    },
+
+    editWorker(state, par){
+      state.workers = state.workers.filter(a => a.idCat != par.idCat);
+      state.workers.push(par);
     }
   },
   actions: {
