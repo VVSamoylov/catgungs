@@ -25,6 +25,14 @@ export default createStore({
     }
   },
   actions: {
+    download(store){
+        let url='https://jsonplaceholder.typicode.com/users';
+        fetch(url).then(resusult=> resusult.json())
+        .then(res => res.map(a=> {
+        store.commit('addWorker',   { id: a.id, nickname: a.username, street: a.address.street})
+    })).catch(e => alert("Что то пошло не так!! "));
+    }
+
   },
   modules: {
   }
